@@ -1,0 +1,605 @@
+*{
+    margin:0;
+    padding:0;
+    font-family: 'poppins','sans-serif';
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    background: #080808;
+    color:#fff;
+}
+#header {
+    width: 100%;
+    height: 100vh;
+    background-image: url(images/background.png);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Prevents the image from scrolling */
+}
+
+#logo-image {
+    max-width: 350px;
+    height: auto; 
+    margin-top: 10px;
+  }
+  .container
+  {
+    padding:10px 10%;
+  }
+  nav{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    
+  }
+  .logo
+  {
+    width:140px;
+
+}
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+
+}
+nav ul li a{
+color: #fff;
+text-decoration: none;
+font-size: 18px;
+position: relative;
+
+}
+nav ul li a::after{
+    content: '';
+    width:0;
+    height:3px;
+    background:#ff0000;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.4s;
+}
+nav ul li a:hover::after
+{
+    width:100%;
+}
+.header-text
+{
+    margin-top: 20%;
+    font-size: 30px;
+
+}
+.header-text h1{
+    font-size: 60px;
+    margin-top: 20px;
+}
+.header-text h1 span{
+color: #ff0000;
+}
+/* #a1-image
+{
+    max-width: 350px;
+    height: auto; 
+    margin-top: 10px;
+} */
+#about
+{
+    padding:80px 0;
+    color:#ababab;
+}
+.row
+{
+    display:flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.about-col-1
+{
+    flex-basis: 50%;
+}
+.about-col-1 img
+{
+    width: 70%;
+}
+.about-col-2
+{
+    flex-basis: 60%;
+}
+.sub-title
+{
+    font-size: 60px;
+    font-weight: 600;
+    color: #fff;
+}
+.tab-titles
+{
+    display: flex;
+    margin: 20px 0 40px;
+}
+.tab-links
+{
+    margin-right: 50px;
+    font-size: 18px;
+    font-weight: 500px;
+    cursor: pointer;
+    position:relative;
+    
+}
+.tab-links::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #ff0000;
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    transition: 0.5s;
+}
+.tab-links.active-link::after
+{
+width: 100%;
+}
+.tab-contents ul li
+{
+    list-style: none;
+    margin: 10px 0;
+}
+.tab-contents ul li span{
+    color:#ff0000;
+    font-size: 14px;
+}
+.tab-contents
+{
+    display: none;
+}
+.tab-contents.active-tab
+{
+    display: block;
+}
+
+
+#services
+{
+    padding: 30px 0;
+    
+}
+.services-list
+{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    grid-gap:40px;
+    margin-top:50px
+}
+.services-list div{
+    background: #262626;
+    padding: 40px;
+    font-size: 13px;
+    font-weight: 300;
+    border-radius: 10px;
+    transition: background 0.5s,transform 0.5s;
+}
+/* .services-list div{
+    font-size: 50px;
+    margin-bottom: 30px;
+} */
+.services-list div h2{
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+.services-list div a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 12px;
+    margin-top: 20px;
+    display: inline-block;
+}
+.services-list div:hover{
+    background: rgba(255, 0, 0, 0.63);
+    transform: translateY(-10px);
+}
+
+
+#portfolio
+{
+    padding: 50px 0;
+}
+.work-list
+{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    grid-gap:40px;
+    margin-top:50px
+
+}
+.work{
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+.work img{
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+    transition: transform 0.5s;
+}
+.layer{
+    width:100%;
+    height: 0;
+    background: linear-gradient(rgba(0,0,0,0.5),#ff0000);
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: center;
+    font-size: 14px;
+    transition: height 0.5s;
+}
+.layer h3{
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+/* .layer a{
+    margin-top: 20px;
+    color: #ff0000;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 60px;
+    background: #fff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    text-align: center;
+} */
+
+.work:hover img{
+    transform: scale(1.1);
+}
+.work:hover .layer{
+    height: 100%;
+}
+.btn{
+    display: block;
+    margin: 50px auto;
+    width : fit-content;
+    border: 1px solid #ff0000;
+    padding: 14px 50px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #fff;
+    transition: background 0.5s ;
+}
+.btn:hover{
+    background: #ff0000;
+}
+
+
+
+.contact-left{
+    flex-basis: 35%;
+}
+.contact-right{
+    flex-basis: 60%;
+}
+.contact-left p{
+    margin-top: 30px;
+}
+.contact-left p svg{
+    color: #ff0000;
+    margin-right: 15px;
+    font-size: 25px;
+}
+.social-icons {
+    margin-top: 30px;
+}
+.social-icons a{
+    text-decoration: none;
+    font-size: 30px;
+    margin-right: 15px;
+    color: #ababab;
+    display: inline-block;
+    transition: transform 0.5s;
+}
+.social-icons a:hover{
+    color: #ff0000;
+    transform: translateY(-5px);
+}
+.btn.btn2{
+    display: inline-block;
+    background: #ff0000;
+}
+.contact-right form{
+    width: 100%;
+}
+form input, form textarea{
+    width: 100%;
+    border: 0;
+    outline: none;
+    background: #262626;
+    padding: 15px;
+    margin: 15px 0;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 6px;
+}
+form .btn2{
+    padding: 14px 60px;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+.copyright
+{
+    width: 100%;
+    text-align: center;
+    padding: 25px 0;
+    background: #262626;
+    font-weight: 300;
+    margin-top: 20px;
+}
+
+/* responsive */
+nav .bi{
+    display: none;
+}
+@media only screen and (max-width: 600px)
+{
+
+    #header {
+        background-image: url(images/back.png); /* Your background image */
+        background-size: cover;                 /* Ensures the image covers the entire container */
+        background-position: center;            /* Centers the background image */
+        background-attachment: scroll;          /* Ensures the image scrolls with the content */
+    }
+    
+    #logo-image{
+        background-image: url(images/back2.png);
+        width: 180px;
+        margin-top: 10px;
+        
+    }
+    .header-text{
+        margin-top: 430px;
+        font-size: 16PX;
+    }
+    .header-text h1{
+        font-size: 28px;
+        margin-top: 22px;
+        
+    }
+    nav .bi{
+        display: block;
+        font-size: 25px;
+    }
+    nav .bi.b{
+        margin-top: 30px;
+    }
+    nav ul{
+        background: #ff0000;
+        position: fixed;
+        top: 0;
+        right: -150px;
+        width: 150px;
+        height: 100vh;
+        padding-top: 50px;
+        z-index: 2;
+        transition: right 0.5s;
+    }
+    nav ul li{
+        display: block;
+        margin: 25px;
+
+    }
+    nav ul .bi{
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        cursor: pointer;
+    }
+    .sub-title{
+        margin-top: 40px;
+        font-size: 40px;
+    }
+    #a1-image {
+        width: 230px;
+        display: block;    
+        margin-top: -70px;
+        margin-left: auto; 
+        margin-right: auto;
+    }
+
+
+#about {
+    padding: 20px 10px; 
+    margin-top: 100px;
+    font-size: 14px;
+}
+
+.sub-title {
+    font-size: 22px; 
+    line-height: 1.2;
+    text-align: center; 
+    margin-bottom: 20px;
+}
+
+.about-col-1, .about-col-2 {
+    flex-basis: 100%;
+     
+}
+
+.about-col-1 img {
+    width: 80%; 
+    max-width: 250px;
+}
+
+
+.tab-titles {
+    align-items: center; 
+
+}
+
+.tab-links {
+    font-size: 14px; 
+    margin: 5px 0;
+}
+
+.tab-links::after {
+    bottom: -5px; 
+}
+
+.tab-links.active-link::after {
+    width: 100%; 
+}
+.tab-contents ul li {
+    margin: 5px 0;
+}
+
+.tab-contents ul li span {
+    font-size: 12px; 
+}
+
+/* List Styling */
+.tab-contents ul {
+    padding-left: 15px;
+}
+
+.tab-contents {
+    margin-bottom: 20px; 
+}
+   
+    .contact-left, .contact-right{
+        flex-basis: 100%;
+    }
+    .copyright{
+        font-size: 14px;
+    }
+    .btn.btn2 {
+        display: block;          
+        margin-left: auto;       
+        margin-right: auto;      
+        width: fit-content;      
+    }
+    #msg {
+        color: #ffffff;
+        margin-top: -40px; /* Adjust this as needed */
+        margin-left: auto;  /* Centers horizontally */
+        margin-right: auto; /* Centers horizontally */
+        display: block;     /* Makes it a block element for centering */
+        width: fit-content;  /* Ensures the element only takes up as much space as needed */
+        text-align: center;  /* Optional: Centers the text inside the element */
+    }
+    .tab-links .active-link {
+     font-size: 10px;
+    }
+    .progress-bar-container span {
+        flex-basis: 3%; /* Allow more space for the skill name on smaller screens */
+    }
+    .progress-bar {
+        width: 100%; /* Adjust progress bar width for small screens */
+    }
+    #skills li {
+        flex-direction: row; /* Stack the skill name and progress bar vertically */
+        display: flex; /* Align the items to the left */
+        margin-top: 1mm; /* Less margin between stacked items */
+    }
+    #skills span {
+        font-size: 14px; /* Smaller font size for skill name */
+        margin-right: 0; /* Remove margin between skill name and progress bar */
+        margin-bottom: 1px; /* Add margin for space between skill name and progress bar */
+        width: 23vw; /* Full width for skill name */
+    }
+
+    .progress-bar-container {
+        width: 100%; /* Make the progress bar container full width */
+        margin-bottom: 5px; /* Space between progress bar and percentage */
+        flex-direction: row; 
+        height: 0.1vh;
+    }
+
+    .progress {
+        width: 100%; /* Make progress bar take up full width */
+        height: 5px; /* Slightly smaller height for progress bar */
+    }
+}
+#msg{
+    color: #ffffff;
+    margin-top: -40px;
+    display: block;
+}
+/* Styling for the tab titles */
+.tab-titles {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 40px;
+    
+}
+.tab-links {
+    cursor: pointer;
+    padding: 10px;
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.active-link {
+   
+    color: #ababab;
+    font-weight: bold;
+    font-size: 22px;
+    
+}
+
+/* Styling for the tab contents */
+.tab-contents {
+    display: none;
+}
+
+.active-tab {
+    display: block;
+}
+
+.progress-bar-container {
+    display: flex;
+    flex-direction: row; /* Stack the skill name and progress ba
+    /* align-items: center; */
+    width: 85%;  /* Adjust width to control how much space the progress bar takes */
+}
+.progress-bar {
+    background-color: #312f2f; /* Grey background for the progress bar (100%) */
+    margin-top: 5px;
+    height: 7px;
+    border-radius: 10px;
+    width: 55%;
+    margin-right: 30px;  /* Space between bar and percentage */
+}
+.progress {
+    background-color: #a00707; /* Red color for the skill percentage */
+    height: 100%;
+    border-radius: 10px;
+    
+}
+#skills ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+#skills li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+#skills span {
+    font-weight: bold;
+    margin-right: 10px;
+}
